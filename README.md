@@ -39,8 +39,7 @@ Para asegurar la evolución saludable del sistema, se establecieron los siguient
 
 ## 📽️ Demostración del Sistema
 *(Aquí puedes insertar el enlace a tu video de Loom o un GIF del cambio de azul a naranja)*
-
----
+https://www.figma.com/proto/IKvJUjYL35EWrkDUXtxsFq/WEBSITE-Modern-Academy?node-id=32-23&t=X3zNcgspz3u0TGnn-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1
 
 ## 🛠️ Herramientas Utilizadas
 - **Figma:** Diseño de interfaz y prototipado avanzado (Smart Animate).
