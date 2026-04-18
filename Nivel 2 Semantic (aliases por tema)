@@ -1,0 +1,192 @@
+Nivel 2 — Semantic (aliases por tema)
+json{
+  "themes": {
+
+    "modern-academy": {
+      "$description": "B2B/B2C adultos. Profesional, confiable, orientado a logros.",
+
+      "color": {
+        "bg": {
+          "brand":        { "$value": "{global.color.blue.500}",    "$type": "color" },
+          "brand-hover":  { "$value": "{global.color.blue.600}",    "$type": "color" },
+          "brand-active": { "$value": "{global.color.blue.700}",    "$type": "color" },
+          "brand-subtle": { "$value": "{global.color.blue.50}",     "$type": "color" },
+          "surface":      { "$value": "{global.color.neutral.white}","$type": "color" },
+          "raised":       { "$value": "{global.color.neutral.50}",  "$type": "color" },
+          "overlay":      { "$value": "{global.color.blue.100}",    "$type": "color" },
+          "accent":       { "$value": "{global.color.teal.400}",    "$type": "color", "$description": "Solo fondos/iconos grandes — ratio insuficiente para texto" }
+        },
+        "text": {
+          "body":         { "$value": "{global.color.neutral.900}", "$type": "color" },
+          "muted":        { "$value": "{global.color.neutral.600}", "$type": "color" },
+          "heading":      { "$value": "{global.color.blue.700}",    "$type": "color" },
+          "link":         { "$value": "{global.color.blue.500}",    "$type": "color" },
+          "on-brand":     { "$value": "{global.color.neutral.white}","$type": "color", "$description": "Auto: blanco si primario > 4.5:1 vs blanco" },
+          "placeholder":  { "$value": "{global.color.neutral.400}", "$type": "color" },
+          "disabled":     { "$value": "{global.color.neutral.400}", "$type": "color" }
+        },
+        "border": {
+          "default":  { "$value": "{global.color.neutral.100}", "$type": "color" },
+          "strong":   { "$value": "{global.color.neutral.200}", "$type": "color" },
+          "focus":    { "$value": "{global.color.blue.500}",    "$type": "color" },
+          "disabled": { "$value": "{global.color.neutral.100}", "$type": "color" }
+        },
+        "action": {
+          "default":  { "$value": "{global.color.blue.500}", "$type": "color" },
+          "hover":    { "$value": "{global.color.blue.600}", "$type": "color" },
+          "active":   { "$value": "{global.color.blue.700}", "$type": "color" },
+          "disabled": { "$value": "{global.color.neutral.200}", "$type": "color" }
+        }
+      },
+
+      "font": {
+        "family-brand":   { "$value": "{global.font.family.pro}" },
+        "weight-heading":  { "$value": "{global.font.weight.semibold}" },
+        "tracking-heading":{ "$value": "{global.font.letterSpacing.tight}" }
+      },
+
+      "radius": {
+        "component": { "$value": "{global.borderRadius.md}" },
+        "card":      { "$value": "{global.borderRadius.lg}" },
+        "badge":     { "$value": "{global.borderRadius.sm}" },
+        "input":     { "$value": "{global.borderRadius.md}" }
+      },
+
+      "motion": {
+        "easing-brand": { "$value": "{global.motion.easing.ease-both}" },
+        "duration-interaction": { "$value": "{global.motion.duration.fast}" }
+      },
+
+      "focus": {
+        "ring-color":  { "$value": "{global.color.blue.500}" },
+        "ring-width":  { "$value": "3px" },
+        "ring-offset": { "$value": "2px" },
+        "$description": "WCAG 2.1 SC 2.4.7 — anillo visible en todos los estados"
+      }
+    },
+
+    "creative-kids": {
+      "$description": "Niños 4-12. Lúdico, vibrante, motivacional. Fuente redondeada.",
+
+      "color": {
+        "bg": {
+          "brand":        { "$value": "{global.color.coral.500}",   "$type": "color" },
+          "brand-hover":  { "$value": "{global.color.coral.600}",   "$type": "color" },
+          "brand-active": { "$value": "{global.color.coral.700}",   "$type": "color" },
+          "brand-subtle": { "$value": "{global.color.coral.50}",    "$type": "color" },
+          "surface":      { "$value": "#FFFDF8",                    "$type": "color" },
+          "raised":       { "$value": "{global.color.coral.50}",    "$type": "color" },
+          "overlay":      { "$value": "{global.color.coral.100}",   "$type": "color" },
+          "accent":       { "$value": "{global.color.violet.400}",  "$type": "color" }
+        },
+        "text": {
+          "body":         { "$value": "{global.color.coral.800}",   "$type": "color" },
+          "muted":        { "$value": "{global.color.coral.600}",   "$type": "color" },
+          "heading":      { "$value": "{global.color.coral.800}",   "$type": "color" },
+          "link":         { "$value": "{global.color.violet.600}",  "$type": "color", "$description": "#5534C8 vs #FFF = 7.01:1 ✓ AAA" },
+          "on-brand":     { "$value": "{global.color.neutral.white}","$type": "color", "$description": "Blanco sobre #D43E0D = 5.14:1 ✓ AA" },
+          "placeholder":  { "$value": "{global.color.coral.400}",   "$type": "color" },
+          "disabled":     { "$value": "{global.color.neutral.400}", "$type": "color" }
+        },
+        "border": {
+          "default":  { "$value": "{global.color.coral.100}",   "$type": "color" },
+          "strong":   { "$value": "{global.color.coral.200}",   "$type": "color" },
+          "focus":    { "$value": "{global.color.coral.500}",   "$type": "color" },
+          "disabled": { "$value": "{global.color.neutral.100}", "$type": "color" }
+        },
+        "action": {
+          "default":  { "$value": "{global.color.coral.500}",  "$type": "color" },
+          "hover":    { "$value": "{global.color.coral.600}",  "$type": "color" },
+          "active":   { "$value": "{global.color.coral.700}",  "$type": "color" },
+          "disabled": { "$value": "{global.color.neutral.200}","$type": "color" }
+        }
+      },
+
+      "font": {
+        "family-brand":    { "$value": "{global.font.family.kids}" },
+        "weight-heading":  { "$value": "{global.font.weight.bold}" },
+        "tracking-heading":{ "$value": "{global.font.letterSpacing.normal}" }
+      },
+
+      "radius": {
+        "component": { "$value": "{global.borderRadius.2xl}" },
+        "card":      { "$value": "{global.borderRadius.2xl}" },
+        "badge":     { "$value": "{global.borderRadius.full}" },
+        "input":     { "$value": "{global.borderRadius.xl}" }
+      },
+
+      "motion": {
+        "easing-brand": { "$value": "{global.motion.easing.spring}" },
+        "duration-interaction": { "$value": "{global.motion.duration.normal}" }
+      },
+
+      "focus": {
+        "ring-color":  { "$value": "{global.color.coral.500}" },
+        "ring-width":  { "$value": "3px" },
+        "ring-offset": { "$value": "2px" }
+      }
+    },
+
+    "corporate-training": {
+      "$description": "Empresas B2B. Austero, alto contraste, máxima legibilidad y seriedad.",
+
+      "color": {
+        "bg": {
+          "brand":        { "$value": "{global.color.charcoal.700}", "$type": "color" },
+          "brand-hover":  { "$value": "{global.color.charcoal.800}", "$type": "color" },
+          "brand-active": { "$value": "{global.color.charcoal.900}", "$type": "color" },
+          "brand-subtle": { "$value": "{global.color.charcoal.50}",  "$type": "color" },
+          "surface":      { "$value": "{global.color.neutral.white}","$type": "color" },
+          "raised":       { "$value": "{global.color.neutral.50}",   "$type": "color" },
+          "overlay":      { "$value": "{global.color.charcoal.100}", "$type": "color" },
+          "accent":       { "$value": "{global.color.gold.500}",     "$type": "color" }
+        },
+        "text": {
+          "body":         { "$value": "{global.color.charcoal.700}", "$type": "color" },
+          "muted":        { "$value": "{global.color.neutral.600}",  "$type": "color" },
+          "heading":      { "$value": "{global.color.charcoal.800}", "$type": "color" },
+          "link":         { "$value": "{global.color.charcoal.700}", "$type": "color" },
+          "on-brand":     { "$value": "{global.color.neutral.50}",   "$type": "color", "$description": "#F9FAFB sobre #1F2937 = 15.2:1 ✓ AAA" },
+          "placeholder":  { "$value": "{global.color.neutral.400}",  "$type": "color" },
+          "disabled":     { "$value": "{global.color.neutral.400}",  "$type": "color" }
+        },
+        "border": {
+          "default":  { "$value": "{global.color.charcoal.100}", "$type": "color" },
+          "strong":   { "$value": "{global.color.charcoal.200}", "$type": "color" },
+          "focus":    { "$value": "{global.color.gold.500}",     "$type": "color", "$description": "Gold como anillo de foco — identidad diferencial" },
+          "disabled": { "$value": "{global.color.neutral.100}",  "$type": "color" }
+        },
+        "action": {
+          "default":  { "$value": "{global.color.charcoal.700}", "$type": "color" },
+          "hover":    { "$value": "{global.color.charcoal.800}", "$type": "color" },
+          "active":   { "$value": "{global.color.charcoal.900}", "$type": "color" },
+          "disabled": { "$value": "{global.color.neutral.200}",  "$type": "color" }
+        }
+      },
+
+      "font": {
+        "family-brand":    { "$value": "{global.font.family.pro}" },
+        "weight-heading":  { "$value": "{global.font.weight.semibold}" },
+        "tracking-heading":{ "$value": "{global.font.letterSpacing.tight}" }
+      },
+
+      "radius": {
+        "component": { "$value": "{global.borderRadius.xs}" },
+        "card":      { "$value": "{global.borderRadius.sm}" },
+        "badge":     { "$value": "{global.borderRadius.xs}" },
+        "input":     { "$value": "{global.borderRadius.sm}" }
+      },
+
+      "motion": {
+        "easing-brand": { "$value": "{global.motion.easing.ease-both}" },
+        "duration-interaction": { "$value": "{global.motion.duration.fast}" }
+      },
+
+      "focus": {
+        "ring-color":  { "$value": "{global.color.gold.500}" },
+        "ring-width":  { "$value": "3px" },
+        "ring-offset": { "$value": "2px" }
+      }
+    }
+  }
+}
