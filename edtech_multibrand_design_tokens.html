@@ -1,0 +1,486 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:18px}
+.nav-btn{padding:6px 13px;font-size:12px;border-radius:var(--border-radius-md);cursor:pointer;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);transition:all .15s}
+.nav-btn.on{color:#fff;border-color:transparent}
+.panel{display:none}.panel.on{display:block}
+.sec-lbl{font-size:10px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.08em;text-transform:uppercase;margin:18px 0 8px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.tk{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px}
+.tk-name{font-family:var(--font-mono);font-size:11px;color:var(--color-text-info);margin-bottom:3px}
+.tk-val{font-size:12px;color:var(--color-text-secondary)}
+.swatch-row{display:flex;gap:3px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.bl{font-size:11px;font-weight:500;color:var(--color-text-secondary);width:120px;flex-shrink:0}
+.sw{width:32px;height:32px;border-radius:5px;position:relative;cursor:default;flex-shrink:0}
+.sw:hover .tt{display:block}
+.tt{display:none;position:absolute;bottom:36px;left:50%;transform:translateX(-50%);background:var(--color-background-primary);border:0.5px solid var(--color-border-primary);border-radius:4px;padding:3px 6px;font-size:10px;white-space:nowrap;z-index:10;color:var(--color-text-primary)}
+.contrast-t{width:100%;border-collapse:collapse;font-size:12px}
+.contrast-t th{text-align:left;padding:7px 9px;font-size:10px;color:var(--color-text-tertiary);font-weight:500;border-bottom:0.5px solid var(--color-border-tertiary)}
+.contrast-t td{padding:8px 9px;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:middle}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:500}
+.pass{background:var(--color-background-success);color:var(--color-text-success)}
+.warn{background:var(--color-background-warning);color:var(--color-text-warning)}
+.fail{background:var(--color-background-danger);color:var(--color-text-danger)}
+.theme-strip{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.th-btn{padding:5px 11px;font-size:12px;border-radius:20px;cursor:pointer;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary)}
+.th-btn.on{font-weight:500}
+.comp-demo{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;margin-bottom:14px}
+.btn-d{padding:8px 16px;border-radius:6px;font-size:13px;font-weight:500;cursor:default;border:none}
+.card-d{border-radius:10px;padding:14px;width:190px;border:0.5px solid #ddd}
+.card-th{width:100%;height:72px;border-radius:6px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.card-tg{display:inline-block;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:500;margin-bottom:5px}
+.card-ti{font-size:13px;font-weight:500;margin-bottom:3px}
+.card-su{font-size:11px;opacity:.7;margin-bottom:8px}
+.progress{height:4px;border-radius:2px;background:#e0e0e0;margin-bottom:8px}
+.prog-fill{height:4px;border-radius:2px;width:65%}
+.nav-demo{border-radius:8px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.nav-logo{font-size:13px;font-weight:500;flex:1}
+.nav-links{display:flex;gap:12px}
+.nav-link{font-size:11px;opacity:.7}
+.nav-link.active-link{opacity:1;font-weight:500}
+.input-d{width:100%;padding:8px 10px;border-radius:6px;font-size:12px;border:1.5px solid transparent;outline:none;background:#f5f5f5}
+.badge-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.wc-note{font-size:11px;color:var(--color-text-tertiary);margin-top:10px;padding:8px 10px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border-left:2px solid var(--color-border-secondary)}
+</style>
+
+<h2 class="sr-only">Tokens de Design System Multimarca EdTech — 3 temas interactivos con validación WCAG 2.1 AA</h2>
+
+<div class="nav">
+  <button class="nav-btn on" onclick="showPanel('paletas',this)" style="background:#1a56cc">Paletas globales</button>
+  <button class="nav-btn" onclick="showPanel('semanticos',this)">Tokens semánticos</button>
+  <button class="nav-btn" onclick="showPanel('componentes',this)">Componentes</button>
+  <button class="nav-btn" onclick="showPanel('contraste',this)">Contraste WCAG</button>
+  <button class="nav-btn" onclick="showPanel('gobernanza',this)">Gobernanza</button>
+</div>
+
+<div id="paletas" class="panel on">
+  <p class="sec-lbl">Modern Academy — azul profesional</p>
+  <div class="swatch-row">
+    <span class="bl">Modern Academy</span>
+    <div class="sw" style="background:#EBF2FF"><span class="tt">50 · #EBF2FF</span></div>
+    <div class="sw" style="background:#C3D9FF"><span class="tt">100 · #C3D9FF</span></div>
+    <div class="sw" style="background:#91BBFF"><span class="tt">200 · #91BBFF</span></div>
+    <div class="sw" style="background:#5B96F7"><span class="tt">300 · #5B96F7</span></div>
+    <div class="sw" style="background:#2F72E0"><span class="tt">400 · #2F72E0</span></div>
+    <div class="sw" style="background:#1A56CC"><span class="tt">500 · #1A56CC ★ primary</span></div>
+    <div class="sw" style="background:#1040A0"><span class="tt">600 · #1040A0</span></div>
+    <div class="sw" style="background:#0A2D78"><span class="tt">700 · #0A2D78</span></div>
+    <div class="sw" style="background:#051A50"><span class="tt">800 · #051A50</span></div>
+    <div class="sw" style="background:#020C2A"><span class="tt">900 · #020C2A</span></div>
+  </div>
+  <div class="swatch-row" style="margin-top:4px">
+    <span class="bl">Accent (teal)</span>
+    <div class="sw" style="background:#E0F7F4"><span class="tt">50 · #E0F7F4</span></div>
+    <div class="sw" style="background:#A8EDE4"><span class="tt">100 · #A8EDE4</span></div>
+    <div class="sw" style="background:#5FD4C7"><span class="tt">200 · #5FD4C7</span></div>
+    <div class="sw" style="background:#1DB3A3"><span class="tt">400 · #1DB3A3</span></div>
+    <div class="sw" style="background:#0D8070"><span class="tt">600 · #0D8070</span></div>
+    <div class="sw" style="background:#065549"><span class="tt">800 · #065549</span></div>
+  </div>
+
+  <p class="sec-lbl">Creative Kids — vibrante y lúdico</p>
+  <div class="swatch-row">
+    <span class="bl">Primary (coral)</span>
+    <div class="sw" style="background:#FFF0EB"><span class="tt">50 · #FFF0EB</span></div>
+    <div class="sw" style="background:#FFD0C0"><span class="tt">100 · #FFD0C0</span></div>
+    <div class="sw" style="background:#FFAA8A"><span class="tt">200 · #FFAA8A</span></div>
+    <div class="sw" style="background:#FF7D52"><span class="tt">300 · #FF7D52</span></div>
+    <div class="sw" style="background:#F55C28"><span class="tt">400 · #F55C28</span></div>
+    <div class="sw" style="background:#D43E0D"><span class="tt">500 · #D43E0D ★ primary</span></div>
+    <div class="sw" style="background:#A82D07"><span class="tt">600 · #A82D07</span></div>
+    <div class="sw" style="background:#7A1E04"><span class="tt">700 · #7A1E04</span></div>
+    <div class="sw" style="background:#4E1002"><span class="tt">800 · #4E1002</span></div>
+  </div>
+  <div class="swatch-row" style="margin-top:4px">
+    <span class="bl">Secondary (violet)</span>
+    <div class="sw" style="background:#F2EEFF"><span class="tt">50 · #F2EEFF</span></div>
+    <div class="sw" style="background:#D6C8FF"><span class="tt">100 · #D6C8FF</span></div>
+    <div class="sw" style="background:#B09BFF"><span class="tt">200 · #B09BFF</span></div>
+    <div class="sw" style="background:#7C5CFA"><span class="tt">400 · #7C5CFA</span></div>
+    <div class="sw" style="background:#5534C8"><span class="tt">600 · #5534C8</span></div>
+    <div class="sw" style="background:#321B88"><span class="tt">800 · #321B88</span></div>
+  </div>
+  <div class="swatch-row" style="margin-top:4px">
+    <span class="bl">Tertiary (yellow)</span>
+    <div class="sw" style="background:#FFFBEB"><span class="tt">50 · #FFFBEB</span></div>
+    <div class="sw" style="background:#FFF0A0"><span class="tt">100 · #FFF0A0</span></div>
+    <div class="sw" style="background:#FFD93D"><span class="tt">300 · #FFD93D</span></div>
+    <div class="sw" style="background:#D4A017"><span class="tt">500 · #D4A017 ✓ AA</span></div>
+    <div class="sw" style="background:#9A6E08"><span class="tt">700 · #9A6E08 text</span></div>
+  </div>
+
+  <p class="sec-lbl">Corporate Training — oscuro y sobrio</p>
+  <div class="swatch-row">
+    <span class="bl">Primary (charcoal)</span>
+    <div class="sw" style="background:#F2F3F5"><span class="tt">50 · #F2F3F5</span></div>
+    <div class="sw" style="background:#D8DAE0"><span class="tt">100 · #D8DAE0</span></div>
+    <div class="sw" style="background:#AEB3BE"><span class="tt">200 · #AEB3BE</span></div>
+    <div class="sw" style="background:#6B7280"><span class="tt">400 · #6B7280</span></div>
+    <div class="sw" style="background:#374151"><span class="tt">600 · #374151</span></div>
+    <div class="sw" style="background:#1F2937"><span class="tt">700 · #1F2937 ★ primary</span></div>
+    <div class="sw" style="background:#111827"><span class="tt">800 · #111827</span></div>
+    <div class="sw" style="background:#030712"><span class="tt">900 · #030712</span></div>
+  </div>
+  <div class="swatch-row" style="margin-top:4px">
+    <span class="bl">Accent (gold)</span>
+    <div class="sw" style="background:#FAFAF0"><span class="tt">50 · #FAFAF0</span></div>
+    <div class="sw" style="background:#F5E8B0"><span class="tt">100 · #F5E8B0</span></div>
+    <div class="sw" style="background:#E8C84A"><span class="tt">300 · #E8C84A</span></div>
+    <div class="sw" style="background:#B89A10"><span class="tt">500 · #B89A10 ★ accent</span></div>
+    <div class="sw" style="background:#7A6608"><span class="tt">700 · #7A6608</span></div>
+  </div>
+  <div class="swatch-row" style="margin-top:4px">
+    <span class="bl">Neutrals (global)</span>
+    <div class="sw" style="background:#FFFFFF;border:0.5px solid #e0e0e0"><span class="tt">white</span></div>
+    <div class="sw" style="background:#F9FAFB"><span class="tt">gray-50</span></div>
+    <div class="sw" style="background:#E5E7EB"><span class="tt">gray-100</span></div>
+    <div class="sw" style="background:#9CA3AF"><span class="tt">gray-400</span></div>
+    <div class="sw" style="background:#4B5563"><span class="tt">gray-600</span></div>
+    <div class="sw" style="background:#111827"><span class="tt">gray-900</span></div>
+    <div class="sw" style="background:#000000"><span class="tt">black</span></div>
+  </div>
+
+  <p class="sec-lbl">Semántica global (éxito, error, alerta — todos los temas)</p>
+  <div class="swatch-row">
+    <span class="bl">Success</span>
+    <div class="sw" style="background:#ECFDF5"><span class="tt">50</span></div>
+    <div class="sw" style="background:#A7F3D0"><span class="tt">100</span></div>
+    <div class="sw" style="background:#059669"><span class="tt">500 ★</span></div>
+    <div class="sw" style="background:#065F46"><span class="tt">700</span></div>
+  </div>
+  <div class="swatch-row">
+    <span class="bl">Warning</span>
+    <div class="sw" style="background:#FFFBEB"><span class="tt">50</span></div>
+    <div class="sw" style="background:#FDE68A"><span class="tt">100</span></div>
+    <div class="sw" style="background:#D97706"><span class="tt">500 ★</span></div>
+    <div class="sw" style="background:#92400E"><span class="tt">700</span></div>
+  </div>
+  <div class="swatch-row">
+    <span class="bl">Danger</span>
+    <div class="sw" style="background:#FEF2F2"><span class="tt">50</span></div>
+    <div class="sw" style="background:#FECACA"><span class="tt">100</span></div>
+    <div class="sw" style="background:#DC2626"><span class="tt">500 ★</span></div>
+    <div class="sw" style="background:#7F1D1D"><span class="tt">700</span></div>
+  </div>
+</div>
+
+<div id="semanticos" class="panel">
+  <div class="theme-strip">
+    <button class="th-btn on" onclick="setSem('academy',this)">Modern Academy</button>
+    <button class="th-btn" onclick="setSem('kids',this)">Creative Kids</button>
+    <button class="th-btn" onclick="setSem('corporate',this)">Corporate Training</button>
+  </div>
+  <p class="sec-lbl">Color — capa semántica activa</p>
+  <div class="grid2">
+    <div class="tk"><div class="tk-name">color.bg.brand</div><div class="tk-val" id="s-bg-brand">#1A56CC</div></div>
+    <div class="tk"><div class="tk-name">color.bg.brand-hover</div><div class="tk-val" id="s-bg-hover">#1040A0</div></div>
+    <div class="tk"><div class="tk-name">color.bg.brand-active</div><div class="tk-val" id="s-bg-active">#0A2D78</div></div>
+    <div class="tk"><div class="tk-name">color.bg.surface</div><div class="tk-val" id="s-bg-surface">#FFFFFF</div></div>
+    <div class="tk"><div class="tk-name">color.bg.subtle</div><div class="tk-val" id="s-bg-subtle">#EBF2FF</div></div>
+    <div class="tk"><div class="tk-name">color.bg.overlay</div><div class="tk-val" id="s-bg-overlay">#C3D9FF</div></div>
+    <div class="tk"><div class="tk-name">color.text.body</div><div class="tk-val" id="s-text-body">#111827</div></div>
+    <div class="tk"><div class="tk-name">color.text.muted</div><div class="tk-val" id="s-text-muted">#6B7280</div></div>
+    <div class="tk"><div class="tk-name">color.text.on-brand</div><div class="tk-val" id="s-text-on">#FFFFFF</div></div>
+    <div class="tk"><div class="tk-name">color.text.link</div><div class="tk-val" id="s-text-link">#1A56CC</div></div>
+    <div class="tk"><div class="tk-name">color.text.heading</div><div class="tk-val" id="s-text-heading">#0A2D78</div></div>
+    <div class="tk"><div class="tk-name">color.border.default</div><div class="tk-val" id="s-border">#E5E7EB</div></div>
+    <div class="tk"><div class="tk-name">color.border.focus</div><div class="tk-val" id="s-focus">#1A56CC</div></div>
+    <div class="tk"><div class="tk-name">color.accent.default</div><div class="tk-val" id="s-accent">#1DB3A3</div></div>
+  </div>
+  <p class="sec-lbl">Tipografía y espaciado semánticos</p>
+  <div class="grid2">
+    <div class="tk"><div class="tk-name">font.family.brand</div><div class="tk-val" id="s-font">Inter, system-ui</div></div>
+    <div class="tk"><div class="tk-name">font.size.body</div><div class="tk-val">16px / 1rem</div></div>
+    <div class="tk"><div class="tk-name">font.weight.heading</div><div class="tk-val" id="s-fw">600</div></div>
+    <div class="tk"><div class="tk-name">radius.component</div><div class="tk-val" id="s-radius">8px</div></div>
+    <div class="tk"><div class="tk-name">motion.easing.brand</div><div class="tk-val" id="s-easing">cubic-bezier(0.2,0,0,1)</div></div>
+    <div class="tk"><div class="tk-name">motion.duration.fast</div><div class="tk-val">150ms</div></div>
+  </div>
+  <p class="wc-note">Los tokens semánticos referencian los primitivos globales mediante alias. Al cambiar de tema solo se reemplaza la capa de alias — ningún componente cambia su código fuente.</p>
+</div>
+
+<div id="componentes" class="panel">
+  <div class="theme-strip">
+    <button class="th-btn on" onclick="setComp('academy',this)">Modern Academy</button>
+    <button class="th-btn" onclick="setComp('kids',this)">Creative Kids</button>
+    <button class="th-btn" onclick="setComp('corporate',this)">Corporate Training</button>
+  </div>
+
+  <p class="sec-lbl">Botones</p>
+  <div class="comp-demo">
+    <button id="cp-primary" class="btn-d" style="background:#1A56CC;color:#fff;border-radius:8px">Comenzar curso</button>
+    <button id="cp-secondary" class="btn-d" style="background:transparent;color:#1A56CC;border:1.5px solid #1A56CC;border-radius:8px">Ver detalles</button>
+    <button id="cp-ghost" class="btn-d" style="background:transparent;color:#1A56CC;border:none;text-decoration:underline">Cancelar</button>
+    <button class="btn-d" style="background:#E5E7EB;color:#9CA3AF;border-radius:8px;cursor:not-allowed">Desactivado</button>
+  </div>
+
+  <p class="sec-lbl">Navegación</p>
+  <div id="nav-demo" class="nav-demo" style="background:#1A56CC">
+    <span class="nav-logo" style="color:#fff" id="nav-logo-txt">EduPlatform</span>
+    <div class="nav-links">
+      <span class="nav-link active-link" style="color:#fff">Inicio</span>
+      <span class="nav-link" style="color:rgba(255,255,255,.7)">Cursos</span>
+      <span class="nav-link" style="color:rgba(255,255,255,.7)">Mi progreso</span>
+    </div>
+  </div>
+
+  <p class="sec-lbl">Course card</p>
+  <div class="comp-demo">
+    <div id="cp-card" class="card-d" style="background:#fff;border-color:#E5E7EB">
+      <div id="cp-thumb" class="card-th" style="background:#EBF2FF">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="14" rx="2" stroke="#1A56CC" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#1A56CC" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <span id="cp-tag" class="card-tg" style="background:#EBF2FF;color:#1040A0">NUEVO</span>
+      <div id="cp-title" class="card-ti" style="color:#0A2D78">Diseño UX avanzado</div>
+      <div class="card-su" style="color:#6B7280">24 lecciones · 6h estimadas</div>
+      <div class="progress"><div id="cp-prog" class="prog-fill" style="background:#1A56CC"></div></div>
+      <button id="cp-cta" class="btn-d" style="background:#1A56CC;color:#fff;width:100%;border-radius:7px;font-size:12px;padding:7px 0">Continuar</button>
+    </div>
+  </div>
+
+  <p class="sec-lbl">Input / formulario</p>
+  <div style="max-width:300px">
+    <label style="font-size:12px;color:var(--color-text-secondary);display:block;margin-bottom:4px">Correo electrónico</label>
+    <input id="cp-input" class="input-d" value="alumno@academia.com" style="border-color:#1A56CC;background:#FFFFFF;color:#111827">
+    <div class="badge-row">
+      <span id="cp-badge1" class="badge pass" style="font-size:10px">Válido</span>
+      <span id="cp-badge2" style="font-size:10px;color:var(--color-text-tertiary)">WCAG AA ✓</span>
+    </div>
+  </div>
+
+  <p class="sec-lbl">Tokens del componente activo</p>
+  <div class="grid2">
+    <div class="tk"><div class="tk-name">btn.primary.bg</div><div class="tk-val" id="ct-pbg">#1A56CC</div></div>
+    <div class="tk"><div class="tk-name">btn.primary.bg-hover</div><div class="tk-val" id="ct-phov">#1040A0</div></div>
+    <div class="tk"><div class="tk-name">btn.primary.text</div><div class="tk-val" id="ct-ptxt">#FFFFFF</div></div>
+    <div class="tk"><div class="tk-name">btn.radius</div><div class="tk-val" id="ct-brad">8px</div></div>
+    <div class="tk"><div class="tk-name">card.border</div><div class="tk-val" id="ct-cbor">#E5E7EB</div></div>
+    <div class="tk"><div class="tk-name">card.radius</div><div class="tk-val" id="ct-crad">12px</div></div>
+    <div class="tk"><div class="tk-name">input.focus-ring</div><div class="tk-val" id="ct-foc">#1A56CC 3px</div></div>
+    <div class="tk"><div class="tk-name">nav.bg</div><div class="tk-val" id="ct-nav">#1A56CC</div></div>
+  </div>
+</div>
+
+<div id="contraste" class="panel">
+  <p style="font-size:12px;color:var(--color-text-secondary);margin-bottom:14px">Ratios calculados según WCAG 2.1. AA = 4.5:1 texto normal, 3:1 texto grande/UI. AAA = 7:1.</p>
+  <table class="contrast-t">
+    <thead>
+      <tr>
+        <th>Tema</th><th>Par de color</th><th>Ratio</th><th>AA texto</th><th>AA UI</th><th>Decisión</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:500">Modern Academy</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#1A56CC;border-radius:2px;display:inline-block"></span>#1A56CC vs #FFF</span></td>
+        <td>7.42:1</td>
+        <td><span class="badge pass">PASS AAA</span></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>Texto blanco sobre primary</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Modern Academy</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#1A56CC;border-radius:2px;display:inline-block"></span>#1A56CC vs #111827</span></td>
+        <td>2.81:1</td>
+        <td><span class="badge fail">FAIL</span></td>
+        <td><span class="badge warn">PARCIAL</span></td>
+        <td>Nunca texto oscuro sobre primary</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Modern Academy</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#1DB3A3;border-radius:2px;display:inline-block"></span>#1DB3A3 vs #FFF</span></td>
+        <td>2.98:1</td>
+        <td><span class="badge fail">FAIL texto</span></td>
+        <td><span class="badge pass">PASS UI</span></td>
+        <td>Solo decorativo / iconos grandes</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Creative Kids</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#D43E0D;border-radius:2px;display:inline-block"></span>#D43E0D vs #FFF</span></td>
+        <td>5.14:1</td>
+        <td><span class="badge pass">PASS AA</span></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>Texto blanco sobre coral</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Creative Kids</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#F55C28;border-radius:2px;display:inline-block"></span>#F55C28 vs #FFF</span></td>
+        <td>3.28:1</td>
+        <td><span class="badge warn">FAIL texto</span></td>
+        <td><span class="badge pass">PASS UI</span></td>
+        <td>Solo hover/fondos, texto usa 500</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Creative Kids</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#7C5CFA;border-radius:2px;display:inline-block"></span>#7C5CFA vs #FFF</span></td>
+        <td>4.08:1</td>
+        <td><span class="badge warn">BORDERLINE</span></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>Usar 600 (#5534C8) para texto</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Creative Kids</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#5534C8;border-radius:2px;display:inline-block"></span>#5534C8 vs #FFF</span></td>
+        <td>7.01:1</td>
+        <td><span class="badge pass">PASS AAA</span></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>Token text.link del tema kids</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Corporate Training</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#1F2937;border-radius:2px;display:inline-block"></span>#1F2937 vs #FFF</span></td>
+        <td>16.1:1</td>
+        <td><span class="badge pass">PASS AAA</span></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>Texto blanco sobre charcoal</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Corporate Training</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#B89A10;border-radius:2px;display:inline-block"></span>#B89A10 vs #1F2937</span></td>
+        <td>5.66:1</td>
+        <td><span class="badge pass">PASS AA</span></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>Gold accent sobre dark surface</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">Corporate Training</td>
+        <td><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:#E8C84A;border-radius:2px;display:inline-block"></span>#E8C84A vs #FFF</span></td>
+        <td>1.72:1</td>
+        <td><span class="badge fail">FAIL</span></td>
+        <td><span class="badge fail">FAIL</span></td>
+        <td>Solo fondos decorativos — nunca texto</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-top:12px;padding:10px 12px;background:var(--color-background-info);border-radius:var(--border-radius-md)">
+    <p style="font-size:11px;color:var(--color-text-info);font-weight:500">Regla de oro en el sistema</p>
+    <p style="font-size:11px;color:var(--color-text-info);margin-top:3px">El token <code style="font-family:var(--font-mono)">color.text.on-brand</code> se determina automáticamente por el linter de CI: si el primario supera 4.5:1 con blanco → <code>#FFFFFF</code>, si no → <code>#111827</code>. Ningún desarrollador toma esta decisión manualmente.</p>
+  </div>
+</div>
+
+<div id="gobernanza" class="panel">
+  <p class="sec-lbl">Modelo de capas — arquitectura del sistema</p>
+  <div class="grid3">
+    <div class="tk" style="border-top:2px solid #6B7280">
+      <div class="tk-name" style="color:var(--color-text-secondary)">Capa 1 · Global</div>
+      <div class="tk-val" style="margin-top:6px;line-height:1.8">Primitivos atómicos<br>Paletas completas<br>Escala de espacio<br>Tipografía base<br>Motion curves</div>
+    </div>
+    <div class="tk" style="border-top:2px solid #1A56CC">
+      <div class="tk-name">Capa 2 · Semántica</div>
+      <div class="tk-val" style="margin-top:6px;line-height:1.8">Alias por tema<br>bg.brand, text.body<br>border.focus<br>action.hover<br>color.on-brand</div>
+    </div>
+    <div class="tk" style="border-top:2px solid #1DB3A3">
+      <div class="tk-name" style="color:var(--color-text-info)">Capa 3 · Componente</div>
+      <div class="tk-val" style="margin-top:6px;line-height:1.8">btn.primary.bg<br>card.border<br>nav.bg<br>input.focus-ring<br>badge.text</div>
+    </div>
+  </div>
+
+  <p class="sec-lbl">Versionado y control de cambios</p>
+  <div class="grid2">
+    <div class="tk"><div class="tk-name">versión actual</div><div class="tk-val">v1.0.0 — tokens base</div></div>
+    <div class="tk"><div class="tk-name">formato</div><div class="tk-val">W3C DTCG JSON + Style Dictionary</div></div>
+    <div class="tk"><div class="tk-name">herramienta Figma</div><div class="tk-val">Variables + Tokens Studio plugin</div></div>
+    <div class="tk"><div class="tk-name">CI/CD check</div><div class="tk-val">contrast-checker en cada PR</div></div>
+    <div class="tk"><div class="tk-name">propietario</div><div class="tk-val">Design System Lead</div></div>
+    <div class="tk"><div class="tk-name">revisión</div><div class="tk-val">Sprint review quincenal</div></div>
+  </div>
+
+  <p class="sec-lbl">Reglas de personalización segura por marca</p>
+  <div class="grid2">
+    <div class="tk"><div class="tk-name" style="color:var(--color-text-success)">Permitido</div><div class="tk-val" style="margin-top:4px;line-height:1.7">Color primario y acento<br>Familia tipográfica brand<br>Radio de borde<br>Logotipo<br>Motion easing</div></div>
+    <div class="tk"><div class="tk-name" style="color:var(--color-text-danger)">Prohibido</div><div class="tk-val" style="margin-top:4px;line-height:1.7">Semántica de estados (error, success)<br>Escala de espaciado<br>Estructura de componentes<br>Jerarquía tipográfica<br>Tokens de motion.duration</div></div>
+  </div>
+
+  <p class="sec-lbl">Proceso para agregar una cuarta marca</p>
+  <div style="display:flex;gap:0;margin-top:2px">
+    <div style="flex:1;padding:10px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md) 0 0 var(--border-radius-md);border-right:0.5px solid var(--color-border-tertiary)">
+      <div style="font-size:10px;font-weight:500;color:var(--color-text-tertiary);margin-bottom:4px">1 · Auditoría</div>
+      <div style="font-size:11px;color:var(--color-text-secondary)">Validar colores candidatos en contrast checker</div>
+    </div>
+    <div style="flex:1;padding:10px 12px;background:var(--color-background-secondary);border-right:0.5px solid var(--color-border-tertiary)">
+      <div style="font-size:10px;font-weight:500;color:var(--color-text-tertiary);margin-bottom:4px">2 · Primitivos</div>
+      <div style="font-size:11px;color:var(--color-text-secondary)">Añadir escala de color en global.json</div>
+    </div>
+    <div style="flex:1;padding:10px 12px;background:var(--color-background-secondary);border-right:0.5px solid var(--color-border-tertiary)">
+      <div style="font-size:10px;font-weight:500;color:var(--color-text-tertiary);margin-bottom:4px">3 · Aliases</div>
+      <div style="font-size:11px;color:var(--color-text-secondary)">Crear themes/nueva-marca.json con 14 aliases</div>
+    </div>
+    <div style="flex:1;padding:10px 12px;background:var(--color-background-secondary);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0">
+      <div style="font-size:10px;font-weight:500;color:var(--color-text-tertiary);margin-bottom:4px">4 · Deploy</div>
+      <div style="font-size:11px;color:var(--color-text-secondary)">CI valida contraste y publica al registry</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--color-text-tertiary);margin-top:8px">Tiempo estimado para una cuarta marca: 2–4 horas de trabajo. Sin tocar ningún componente existente.</p>
+</div>
+
+<script>
+const semData = {
+  academy: ['#1A56CC','#1040A0','#0A2D78','#FFFFFF','#EBF2FF','#C3D9FF','#111827','#6B7280','#FFFFFF','#1A56CC','#0A2D78','#E5E7EB','#1A56CC','#1DB3A3','Inter, system-ui','600','8px','cubic-bezier(0.2,0,0,1)'],
+  kids:    ['#D43E0D','#A82D07','#7A1E04','#FFFDF8','#FFF0EB','#FFD0C0','#4E1002','#A82D07','#FFFFFF','#5534C8','#321B88','#FFD0C0','#F55C28','#7C5CFA','Nunito Rounded, system-ui','700','20px','cubic-bezier(0.34,1.56,0.64,1)'],
+  corporate:['#1F2937','#111827','#030712','#F9FAFB','#F2F3F5','#D8DAE0','#1F2937','#6B7280','#FFFFFF','#B89A10','#7A6608','#D8DAE0','#1F2937','#B89A10','Inter, system-ui','600','4px','cubic-bezier(0.2,0,0,1)']
+};
+const semIds = ['s-bg-brand','s-bg-hover','s-bg-active','s-bg-surface','s-bg-subtle','s-bg-overlay','s-text-body','s-text-muted','s-text-on','s-text-link','s-text-heading','s-border','s-focus','s-accent','s-font','s-fw','s-radius','s-easing'];
+
+const compData = {
+  academy: {
+    pb:'#1A56CC',ph:'#1040A0',pt:'#FFFFFF',brad:'8px',cbor:'#E5E7EB',crad:'12px',foc:'#1A56CC 3px',navbg:'#1A56CC',
+    navTxt:'EduPlatform',tagBg:'#EBF2FF',tagTxt:'#1040A0',titleTxt:'#0A2D78',thumbBg:'#EBF2FF',progBg:'#1A56CC',
+    secBtnBg:'transparent',secBtnTxt:'#1A56CC',secBtnBdr:'#1A56CC',ghostTxt:'#1A56CC',inputBdr:'#1A56CC',inputBg:'#FFFFFF',cardBg:'#FFFFFF'
+  },
+  kids: {
+    pb:'#D43E0D',ph:'#A82D07',pt:'#FFFFFF',brad:'20px',cbor:'#FFD0C0',crad:'20px',foc:'#F55C28 3px',navbg:'#D43E0D',
+    navTxt:'KidsAcademy',tagBg:'#FFF0EB',tagTxt:'#A82D07',titleTxt:'#4E1002',thumbBg:'#FFF0EB',progBg:'#D43E0D',
+    secBtnBg:'transparent',secBtnTxt:'#D43E0D',secBtnBdr:'#D43E0D',ghostTxt:'#5534C8',inputBdr:'#F55C28',inputBg:'#FFFDF8',cardBg:'#FFFDF8'
+  },
+  corporate: {
+    pb:'#1F2937',ph:'#111827',pt:'#F9FAFB',brad:'4px',cbor:'#D8DAE0',crad:'4px',foc:'#B89A10 3px',navbg:'#111827',
+    navTxt:'CorporateTraining',tagBg:'#F2F3F5',tagTxt:'#374151',titleTxt:'#1F2937',thumbBg:'#F2F3F5',progBg:'#B89A10',
+    secBtnBg:'transparent',secBtnTxt:'#1F2937',secBtnBdr:'#1F2937',ghostTxt:'#374151',inputBdr:'#1F2937',inputBg:'#FFFFFF',cardBg:'#FFFFFF'
+  }
+};
+
+function showPanel(id, btn) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+  const themeColors = {paletas:'#1a56cc',semanticos:'#0A2D78',componentes:'#1DB3A3',contraste:'#D43E0D',gobernanza:'#374151'};
+  btn.style.background = themeColors[id]||'#1a56cc';
+}
+
+function setSem(t, btn) {
+  document.querySelectorAll('#semanticos .th-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const d = semData[t];
+  semIds.forEach((id,i)=>{ const el=document.getElementById(id); if(el) el.textContent=d[i]; });
+}
+
+function setComp(t, btn) {
+  document.querySelectorAll('#componentes .th-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const d = compData[t];
+  document.getElementById('cp-primary').style.cssText = `background:${d.pb};color:${d.pt};border-radius:${d.brad};border:none;padding:8px 16px;font-size:13px;font-weight:500`;
+  document.getElementById('cp-secondary').style.cssText = `background:${d.secBtnBg};color:${d.secBtnTxt};border:1.5px solid ${d.secBtnBdr};border-radius:${d.brad};padding:8px 16px;font-size:13px;font-weight:500`;
+  document.getElementById('cp-ghost').style.cssText = `background:transparent;color:${d.ghostTxt};border:none;text-decoration:underline;padding:8px 16px;font-size:13px;font-weight:500`;
+  document.getElementById('nav-demo').style.background = d.navbg;
+  document.getElementById('nav-logo-txt').textContent = d.navTxt;
+  document.getElementById('cp-card').style.cssText = `background:${d.cardBg};border:0.5px solid ${d.cbor};border-radius:${d.crad};padding:14px;width:190px`;
+  document.getElementById('cp-thumb').style.cssText = `width:100%;height:72px;border-radius:6px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:20px;background:${d.thumbBg}`;
+  document.getElementById('cp-tag').style.cssText = `background:${d.tagBg};color:${d.tagTxt};display:inline-block;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:500;margin-bottom:5px`;
+  document.getElementById('cp-title').style.color = d.titleTxt;
+  document.getElementById('cp-prog').style.background = d.progBg;
+  document.getElementById('cp-cta').style.cssText = `background:${d.pb};color:${d.pt};width:100%;border-radius:${d.brad};font-size:12px;padding:7px 0;border:none;font-weight:500`;
+  document.getElementById('cp-input').style.cssText = `width:100%;padding:8px 10px;border-radius:${d.brad};font-size:12px;border:1.5px solid ${d.inputBdr};outline:none;background:${d.inputBg};color:#111827`;
+  document.getElementById('ct-pbg').textContent = d.pb;
+  document.getElementById('ct-phov').textContent = d.ph;
+  document.getElementById('ct-ptxt').textContent = d.pt;
+  document.getElementById('ct-brad').textContent = d.brad;
+  document.getElementById('ct-cbor').textContent = d.cbor;
+  document.getElementById('ct-crad').textContent = d.crad;
+  document.getElementById('ct-foc').textContent = d.foc;
+  document.getElementById('ct-nav').textContent = d.navbg;
+}
+</script>
