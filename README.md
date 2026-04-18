@@ -42,5 +42,5 @@ Para asegurar la evolución saludable del sistema, se establecieron los siguient
 https://www.figma.com/proto/IKvJUjYL35EWrkDUXtxsFq/WEBSITE-Modern-Academy?node-id=32-23&t=X3zNcgspz3u0TGnn-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1
 
 ## 🛠️ Herramientas Utilizadas
-- **Figma:** Diseño de interfaz y prototipado avanzado (Smart Animate).
+- **Figma:** Diseño de interfaz y prototipado básico sujeto a cambios fundamentales (Smart Animate).
 - **GitHub:** Documentación y control de versiones del sistema.
