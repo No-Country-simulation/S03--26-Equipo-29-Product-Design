@@ -1,0 +1,183 @@
+{
+  "components": {
+
+    "button": {
+      "$description": "Todos los estados de botón. Referencias a capa semántica del tema activo.",
+
+      "primary": {
+        "bg":             { "$value": "{theme.color.action.default}" },
+        "bg-hover":       { "$value": "{theme.color.action.hover}" },
+        "bg-active":      { "$value": "{theme.color.action.active}" },
+        "bg-disabled":    { "$value": "{theme.color.action.disabled}" },
+        "text":           { "$value": "{theme.color.text.on-brand}" },
+        "text-disabled":  { "$value": "{global.color.neutral.400}" },
+        "border":         { "$value": "transparent" },
+        "border-radius":  { "$value": "{theme.radius.component}" },
+        "padding-x":      { "$value": "{global.space.4}" },
+        "padding-y":      { "$value": "{global.space.2}" },
+        "font-size":      { "$value": "{global.font.size.sm}" },
+        "font-weight":    { "$value": "{theme.font.weight-heading}" },
+        "focus-ring":     { "$value": "{theme.focus.ring-color}" },
+        "focus-offset":   { "$value": "{theme.focus.ring-offset}" },
+        "min-height":     { "$value": "44px", "$description": "WCAG 2.5.8 — target mínimo táctil" },
+        "min-width":      { "$value": "44px", "$description": "WCAG 2.5.8" },
+        "transition":     { "$value": "{theme.motion.duration-interaction}" }
+      },
+
+      "secondary": {
+        "bg":            { "$value": "transparent" },
+        "bg-hover":      { "$value": "{theme.color.bg.brand-subtle}" },
+        "text":          { "$value": "{theme.color.action.default}" },
+        "border":        { "$value": "{theme.color.action.default}" },
+        "border-width":  { "$value": "1.5px" },
+        "border-radius": { "$value": "{theme.radius.component}" },
+        "padding-x":     { "$value": "{global.space.4}" },
+        "padding-y":     { "$value": "{global.space.2}" },
+        "min-height":    { "$value": "44px" }
+      },
+
+      "ghost": {
+        "bg":            { "$value": "transparent" },
+        "bg-hover":      { "$value": "{theme.color.bg.brand-subtle}" },
+        "text":          { "$value": "{theme.color.text.link}" },
+        "border":        { "$value": "transparent" },
+        "border-radius": { "$value": "{theme.radius.component}" },
+        "padding-x":     { "$value": "{global.space.3}" },
+        "padding-y":     { "$value": "{global.space.2}" },
+        "min-height":    { "$value": "44px" }
+      },
+
+      "destructive": {
+        "bg":        { "$value": "{global.color.semantic.danger.base}" },
+        "bg-hover":  { "$value": "#B91C1C" },
+        "text":      { "$value": "{global.color.neutral.white}" },
+        "border":    { "$value": "transparent" },
+        "border-radius": { "$value": "{theme.radius.component}" }
+      }
+    },
+
+    "courseCard": {
+      "$description": "Card de curso — componente central del producto EdTech.",
+
+      "container": {
+        "bg":            { "$value": "{theme.color.bg.surface}" },
+        "bg-hover":      { "$value": "{theme.color.bg.raised}" },
+        "border":        { "$value": "{theme.color.border.default}" },
+        "border-width":  { "$value": "1px" },
+        "border-radius": { "$value": "{theme.radius.card}" },
+        "padding":       { "$value": "{global.space.4}" },
+        "shadow":        { "$value": "{global.shadow.sm}" },
+        "shadow-hover":  { "$value": "{global.shadow.md}" },
+        "transition":    { "$value": "{theme.motion.duration-interaction}" }
+      },
+
+      "thumbnail": {
+        "bg":            { "$value": "{theme.color.bg.brand-subtle}" },
+        "border-radius": { "$value": "{global.borderRadius.md}" },
+        "aspect-ratio":  { "$value": "16/9" },
+        "min-height":    { "$value": "120px" }
+      },
+
+      "badge": {
+        "bg":         { "$value": "{theme.color.bg.brand-subtle}" },
+        "text":       { "$value": "{theme.color.action.hover}" },
+        "border-radius": { "$value": "{theme.radius.badge}" },
+        "font-size":  { "$value": "{global.font.size.xs}" },
+        "font-weight":{ "$value": "{global.font.weight.medium}" },
+        "padding-x":  { "$value": "{global.space.2}" },
+        "padding-y":  { "$value": "{global.space.1}" }
+      },
+
+      "title": {
+        "color":       { "$value": "{theme.color.text.heading}" },
+        "font-size":   { "$value": "{global.font.size.md}" },
+        "font-weight": { "$value": "{theme.font.weight-heading}" },
+        "line-height": { "$value": "{global.font.lineHeight.snug}" }
+      },
+
+      "meta": {
+        "color":    { "$value": "{theme.color.text.muted}" },
+        "font-size":{ "$value": "{global.font.size.sm}" }
+      },
+
+      "progress": {
+        "track-bg":   { "$value": "{theme.color.border.default}" },
+        "fill":       { "$value": "{theme.color.action.default}" },
+        "height":     { "$value": "4px" },
+        "border-radius": { "$value": "{global.borderRadius.full}" }
+      },
+
+      "cta": {
+        "margin-top": { "$value": "{global.space.3}" }
+      }
+    },
+
+    "input": {
+      "bg":               { "$value": "{theme.color.bg.surface}" },
+      "text":             { "$value": "{theme.color.text.body}" },
+      "placeholder":      { "$value": "{theme.color.text.placeholder}" },
+      "border":           { "$value": "{theme.color.border.default}" },
+      "border-width":     { "$value": "1px" },
+      "border-hover":     { "$value": "{theme.color.border.strong}" },
+      "border-focus":     { "$value": "{theme.color.border.focus}" },
+      "border-error":     { "$value": "{global.color.semantic.danger.base}" },
+      "border-radius":    { "$value": "{theme.radius.input}" },
+      "padding-x":        { "$value": "{global.space.3}" },
+      "padding-y":        { "$value": "{global.space.2}" },
+      "font-size":        { "$value": "{global.font.size.md}", "$description": "Mínimo 16px en móvil para evitar zoom iOS — WCAG 1.4.4" },
+      "min-height":       { "$value": "44px" },
+      "focus-ring-width": { "$value": "{theme.focus.ring-width}" },
+      "focus-ring-color": { "$value": "{theme.focus.ring-color}" },
+      "focus-ring-offset":{ "$value": "{theme.focus.ring-offset}" },
+      "label-font-size":  { "$value": "{global.font.size.sm}" },
+      "label-color":      { "$value": "{theme.color.text.body}" },
+      "helper-font-size": { "$value": "{global.font.size.xs}" },
+      "helper-color":     { "$value": "{theme.color.text.muted}" },
+      "error-color":      { "$value": "{global.color.semantic.danger.text}" }
+    },
+
+    "navigation": {
+      "bg":           { "$value": "{theme.color.action.default}" },
+      "text":         { "$value": "{theme.color.text.on-brand}" },
+      "text-muted":   { "$value": "rgba(255,255,255,0.7)" },
+      "border-bottom":{ "$value": "{theme.color.action.active}" },
+      "height":       { "$value": "64px" },
+      "padding-x":    { "$value": "{global.space.6}" },
+      "active-indicator": { "$value": "{global.color.neutral.white}" },
+      "active-width":     { "$value": "2px" }
+    },
+
+    "badge": {
+      "success": {
+        "bg":   { "$value": "{global.color.semantic.success.bg}" },
+        "text": { "$value": "{global.color.semantic.success.text}" }
+      },
+      "warning": {
+        "bg":   { "$value": "{global.color.semantic.warning.bg}" },
+        "text": { "$value": "{global.color.semantic.warning.text}" }
+      },
+      "danger": {
+        "bg":   { "$value": "{global.color.semantic.danger.bg}" },
+        "text": { "$value": "{global.color.semantic.danger.text}" }
+      },
+      "shared": {
+        "border-radius": { "$value": "{theme.radius.badge}" },
+        "font-size":     { "$value": "{global.font.size.xs}" },
+        "font-weight":   { "$value": "{global.font.weight.medium}" },
+        "padding-x":     { "$value": "{global.space.2}" },
+        "padding-y":     { "$value": "{global.space.1}" }
+      }
+    },
+
+    "modal": {
+      "bg":            { "$value": "{theme.color.bg.surface}" },
+      "border-radius": { "$value": "{theme.radius.card}" },
+      "padding":       { "$value": "{global.space.6}" },
+      "shadow":        { "$value": "{global.shadow.xl}" },
+      "overlay-bg":    { "$value": "rgba(17,24,39,0.6)" },
+      "max-width":     { "$value": "560px" },
+      "header-border": { "$value": "{theme.color.border.default}" },
+      "footer-border": { "$value": "{theme.color.border.default}" }
+    }
+  }
+}
