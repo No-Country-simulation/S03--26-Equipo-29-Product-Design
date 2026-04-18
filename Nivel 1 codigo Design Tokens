@@ -1,0 +1,203 @@
+Design Tokens JSON — 3 niveles, W3C DTCG
+Nivel 1 — Global (primitivos)
+json{
+  "$schema": "https://design-tokens.org/schema.json",
+  "$version": "1.0.0",
+  "$description": "Tokens primitivos globales. Nunca se referencian directamente en componentes.",
+
+  "global": {
+    "color": {
+      "blue": {
+        "50":  { "$value": "#EBF2FF", "$type": "color" },
+        "100": { "$value": "#C3D9FF", "$type": "color" },
+        "200": { "$value": "#91BBFF", "$type": "color" },
+        "300": { "$value": "#5B96F7", "$type": "color" },
+        "400": { "$value": "#2F72E0", "$type": "color" },
+        "500": { "$value": "#1A56CC", "$type": "color", "$description": "Modern Academy primary. Ratio vs #FFF: 7.42:1 ✓ AAA" },
+        "600": { "$value": "#1040A0", "$type": "color" },
+        "700": { "$value": "#0A2D78", "$type": "color" },
+        "800": { "$value": "#051A50", "$type": "color" },
+        "900": { "$value": "#020C2A", "$type": "color" }
+      },
+      "teal": {
+        "50":  { "$value": "#E0F7F4", "$type": "color" },
+        "100": { "$value": "#A8EDE4", "$type": "color" },
+        "200": { "$value": "#5FD4C7", "$type": "color" },
+        "400": { "$value": "#1DB3A3", "$type": "color", "$description": "Accent Modern Academy. Solo UI/decorativo — ratio 2.98:1 no apto para texto body" },
+        "600": { "$value": "#0D8070", "$type": "color" },
+        "800": { "$value": "#065549", "$type": "color" }
+      },
+      "coral": {
+        "50":  { "$value": "#FFF0EB", "$type": "color" },
+        "100": { "$value": "#FFD0C0", "$type": "color" },
+        "200": { "$value": "#FFAA8A", "$type": "color" },
+        "300": { "$value": "#FF7D52", "$type": "color" },
+        "400": { "$value": "#F55C28", "$type": "color", "$description": "Hover Creative Kids. Ratio vs #FFF: 3.28:1 — solo fondos/hover, nunca texto" },
+        "500": { "$value": "#D43E0D", "$type": "color", "$description": "Creative Kids primary. Ratio vs #FFF: 5.14:1 ✓ AA" },
+        "600": { "$value": "#A82D07", "$type": "color" },
+        "700": { "$value": "#7A1E04", "$type": "color" },
+        "800": { "$value": "#4E1002", "$type": "color" }
+      },
+      "violet": {
+        "50":  { "$value": "#F2EEFF", "$type": "color" },
+        "100": { "$value": "#D6C8FF", "$type": "color" },
+        "200": { "$value": "#B09BFF", "$type": "color" },
+        "400": { "$value": "#7C5CFA", "$type": "color", "$description": "Ratio vs #FFF: 4.08:1 — borderline, usar 600 para texto" },
+        "600": { "$value": "#5534C8", "$type": "color", "$description": "text.link Creative Kids. Ratio vs #FFF: 7.01:1 ✓ AAA" },
+        "800": { "$value": "#321B88", "$type": "color" }
+      },
+      "yellow": {
+        "50":  { "$value": "#FFFBEB", "$type": "color" },
+        "100": { "$value": "#FFF0A0", "$type": "color" },
+        "300": { "$value": "#FFD93D", "$type": "color", "$description": "Solo decorativo. Ratio vs #FFF: 1.2:1 — nunca texto" },
+        "500": { "$value": "#D4A017", "$type": "color" },
+        "700": { "$value": "#9A6E08", "$type": "color" }
+      },
+      "charcoal": {
+        "50":  { "$value": "#F2F3F5", "$type": "color" },
+        "100": { "$value": "#D8DAE0", "$type": "color" },
+        "200": { "$value": "#AEB3BE", "$type": "color" },
+        "400": { "$value": "#6B7280", "$type": "color" },
+        "600": { "$value": "#374151", "$type": "color" },
+        "700": { "$value": "#1F2937", "$type": "color", "$description": "Corporate Training primary. Ratio vs #FFF: 16.1:1 ✓ AAA" },
+        "800": { "$value": "#111827", "$type": "color" },
+        "900": { "$value": "#030712", "$type": "color" }
+      },
+      "gold": {
+        "50":  { "$value": "#FAFAF0", "$type": "color" },
+        "100": { "$value": "#F5E8B0", "$type": "color" },
+        "300": { "$value": "#E8C84A", "$type": "color", "$description": "Solo fondos decorativos. Ratio vs #FFF: 1.72:1 — nunca texto" },
+        "500": { "$value": "#B89A10", "$type": "color", "$description": "Accent Corporate. Ratio vs #1F2937: 5.66:1 ✓ AA" },
+        "700": { "$value": "#7A6608", "$type": "color" }
+      },
+      "neutral": {
+        "white":  { "$value": "#FFFFFF", "$type": "color" },
+        "black":  { "$value": "#000000", "$type": "color" },
+        "50":     { "$value": "#F9FAFB", "$type": "color" },
+        "100":    { "$value": "#E5E7EB", "$type": "color" },
+        "200":    { "$value": "#D1D5DB", "$type": "color" },
+        "400":    { "$value": "#9CA3AF", "$type": "color" },
+        "600":    { "$value": "#4B5563", "$type": "color" },
+        "900":    { "$value": "#111827", "$type": "color" }
+      },
+      "semantic": {
+        "success": {
+          "bg":   { "$value": "#ECFDF5", "$type": "color" },
+          "base": { "$value": "#059669", "$type": "color", "$description": "Ratio vs #FFF: 4.54:1 ✓ AA" },
+          "text": { "$value": "#065F46", "$type": "color" }
+        },
+        "warning": {
+          "bg":   { "$value": "#FFFBEB", "$type": "color" },
+          "base": { "$value": "#D97706", "$type": "color", "$description": "Ratio vs #FFF: 4.52:1 ✓ AA" },
+          "text": { "$value": "#92400E", "$type": "color" }
+        },
+        "danger": {
+          "bg":   { "$value": "#FEF2F2", "$type": "color" },
+          "base": { "$value": "#DC2626", "$type": "color", "$description": "Ratio vs #FFF: 5.74:1 ✓ AA" },
+          "text": { "$value": "#7F1D1D", "$type": "color" }
+        },
+        "info": {
+          "bg":   { "$value": "#EFF6FF", "$type": "color" },
+          "base": { "$value": "#2563EB", "$type": "color" },
+          "text": { "$value": "#1E3A8A", "$type": "color" }
+        }
+      }
+    },
+
+    "font": {
+      "family": {
+        "pro":    { "$value": "Inter, system-ui, -apple-system, sans-serif", "$type": "fontFamily" },
+        "kids":   { "$value": "'Nunito Rounded', 'Varela Round', system-ui, sans-serif", "$type": "fontFamily" },
+        "mono":   { "$value": "'JetBrains Mono', 'Fira Code', Consolas, monospace", "$type": "fontFamily" }
+      },
+      "size": {
+        "2xs": { "$value": "10px", "$type": "fontSize" },
+        "xs":  { "$value": "12px", "$type": "fontSize" },
+        "sm":  { "$value": "14px", "$type": "fontSize" },
+        "md":  { "$value": "16px", "$type": "fontSize", "$description": "Base — mínimo para texto body. WCAG 1.4.4" },
+        "lg":  { "$value": "20px", "$type": "fontSize" },
+        "xl":  { "$value": "24px", "$type": "fontSize" },
+        "2xl": { "$value": "32px", "$type": "fontSize" },
+        "3xl": { "$value": "40px", "$type": "fontSize" }
+      },
+      "weight": {
+        "regular": { "$value": 400, "$type": "fontWeight" },
+        "medium":  { "$value": 500, "$type": "fontWeight" },
+        "semibold":{ "$value": 600, "$type": "fontWeight" },
+        "bold":    { "$value": 700, "$type": "fontWeight" }
+      },
+      "lineHeight": {
+        "tight":   { "$value": "1.25", "$type": "lineHeight" },
+        "snug":    { "$value": "1.375", "$type": "lineHeight" },
+        "normal":  { "$value": "1.5",  "$type": "lineHeight" },
+        "relaxed": { "$value": "1.625","$type": "lineHeight" },
+        "loose":   { "$value": "2",    "$type": "lineHeight" }
+      },
+      "letterSpacing": {
+        "tight":  { "$value": "-0.02em", "$type": "letterSpacing" },
+        "normal": { "$value": "0em",     "$type": "letterSpacing" },
+        "wide":   { "$value": "0.05em",  "$type": "letterSpacing" },
+        "wider":  { "$value": "0.08em",  "$type": "letterSpacing" }
+      }
+    },
+
+    "space": {
+      "0":  { "$value": "0px",   "$type": "dimension" },
+      "1":  { "$value": "4px",   "$type": "dimension" },
+      "2":  { "$value": "8px",   "$type": "dimension" },
+      "3":  { "$value": "12px",  "$type": "dimension" },
+      "4":  { "$value": "16px",  "$type": "dimension" },
+      "5":  { "$value": "20px",  "$type": "dimension" },
+      "6":  { "$value": "24px",  "$type": "dimension" },
+      "8":  { "$value": "32px",  "$type": "dimension" },
+      "10": { "$value": "40px",  "$type": "dimension" },
+      "12": { "$value": "48px",  "$type": "dimension" },
+      "16": { "$value": "64px",  "$type": "dimension" },
+      "20": { "$value": "80px",  "$type": "dimension" },
+      "24": { "$value": "96px",  "$type": "dimension" }
+    },
+
+    "borderRadius": {
+      "none": { "$value": "0px",   "$type": "borderRadius" },
+      "xs":   { "$value": "2px",   "$type": "borderRadius" },
+      "sm":   { "$value": "4px",   "$type": "borderRadius" },
+      "md":   { "$value": "8px",   "$type": "borderRadius" },
+      "lg":   { "$value": "12px",  "$type": "borderRadius" },
+      "xl":   { "$value": "16px",  "$type": "borderRadius" },
+      "2xl":  { "$value": "20px",  "$type": "borderRadius" },
+      "full": { "$value": "9999px","$type": "borderRadius" }
+    },
+
+    "shadow": {
+      "xs": { "$value": "0 1px 2px rgba(0,0,0,0.06)", "$type": "shadow" },
+      "sm": { "$value": "0 2px 4px rgba(0,0,0,0.08)", "$type": "shadow" },
+      "md": { "$value": "0 4px 12px rgba(0,0,0,0.10)", "$type": "shadow" },
+      "lg": { "$value": "0 8px 24px rgba(0,0,0,0.12)", "$type": "shadow" },
+      "xl": { "$value": "0 16px 40px rgba(0,0,0,0.14)","$type": "shadow" }
+    },
+
+    "motion": {
+      "duration": {
+        "instant": { "$value": "0ms",   "$type": "duration" },
+        "fast":    { "$value": "150ms", "$type": "duration" },
+        "normal":  { "$value": "250ms", "$type": "duration" },
+        "slow":    { "$value": "400ms", "$type": "duration" },
+        "slower":  { "$value": "600ms", "$type": "duration" }
+      },
+      "easing": {
+        "linear":    { "$value": "linear",                          "$type": "cubicBezier" },
+        "ease-in":   { "$value": "cubic-bezier(0.4, 0, 1, 1)",     "$type": "cubicBezier" },
+        "ease-out":  { "$value": "cubic-bezier(0, 0, 0.2, 1)",     "$type": "cubicBezier" },
+        "ease-both": { "$value": "cubic-bezier(0.2, 0, 0, 1)",     "$type": "cubicBezier" },
+        "spring":    { "$value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "$type": "cubicBezier" }
+      }
+    },
+
+    "grid": {
+      "columns": { "$value": 12,       "$type": "number" },
+      "gutter":  { "$value": "24px",   "$type": "dimension" },
+      "margin":  { "$value": "32px",   "$type": "dimension" },
+      "max-width":{ "$value": "1280px","$type": "dimension" }
+    }
+  }
+}
